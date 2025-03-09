@@ -12,6 +12,8 @@ import { rightarrow, leftarrow } from '../assets';
 import { DemoComputer } from './canvas';
 import {github} from '../assets';
 import CanvasLoader from "./Loader";
+import { SectionWrapper } from '../hoc';
+
 
 const projectCount = projects.length;
 
@@ -37,7 +39,7 @@ const Projects = () => {
 
 
   return (
-    <section className='c-space-my-20'>
+    <section>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
@@ -108,4 +110,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default SectionWrapper(Projects, "work");
