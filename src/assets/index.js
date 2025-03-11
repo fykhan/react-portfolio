@@ -34,6 +34,10 @@ import project2 from "./project/project2.mp4";
 import project3 from "./project/project3.mp4";
 import arrowup from "./arrow-up.png";
 import terminal from "./terminal.png";
+import pytorch from "./tech/pytorch.png";
+import tensorflow from "./tech/tensorflow.png";
+import django from "./tech/django.png";
+import flask from "./tech/flask.png";
 
 export {
   logo,
@@ -71,5 +75,9 @@ export {
   project3, 
   linkedin,
   arrowup,
-  terminal
+  terminal,
+  pytorch,
+  tensorflow,
+  django,
+  flask
 };

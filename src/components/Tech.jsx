@@ -1,31 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { MeshCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
-import { languages } from "../constants";
+import { languages, technologies } from "../constants";
 import { motion } from "framer-motion";
 import { textVariant } from "../utils/motion";
 import { styles } from "../styles";
 
 
 const Tech = () => {
+  const [showLanguages, setShowLanguages] = useState(true);
+
   return (
     <div>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionHeadText} text-center`}>
           Skills
         </p>
-        <h2 className={`${styles.sectionSubText} text-center`}>
-          Languages
-        </h2>
+        <div className="flex justify-center gap-10 mt-10">
+          <button 
+            className={`${styles.button} ${showLanguages ? styles.activeButton : ""}`} 
+            onClick={() => setShowLanguages(true)}
+          >
+            Languages
+          </button>
+          <button 
+            className={`${styles.button} ${!showLanguages ? styles.activeButton : ""}`} 
+            onClick={() => setShowLanguages(false)}
+          >
+            Tools
+          </button>
+        </div>
       </motion.div>
-      <div className='mt-20 flex flex-row flex-wrap justify-center gap-10'>
-        {languages.map((language) => (
-          <div className='w-28 h-28' key={language.name}>
-            <MeshCanvas icon={language.icon} />
+      {showLanguages ? (
+        <>
+          <motion.div variants={textVariant()}>
+            <h2 className={`${styles.sectionSubText} text-center mt-20`}>
+              Languages
+            </h2>
+          </motion.div>
+          <div className='mt-20 flex flex-row flex-wrap justify-center gap-10'>
+            {languages.map((language) => (
+              <div className='w-28 h-28' key={language.name}>
+                <MeshCanvas icon={language.icon} />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      ) : (
+        <>
+          <motion.div variants={textVariant()}>
+            <h2 className={`${styles.sectionSubText} text-center mt-20`}>
+              Tools
+            </h2>
+          </motion.div>
+          <div className='mt-20 flex flex-row flex-wrap justify-center gap-10'>
+            {technologies.map((technology) => (
+              <div className='w-20 h-20' key={technology.name}>
+                <MeshCanvas icon={technology.icon} />
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -7,7 +7,6 @@ import {
   Decal,
   useTexture,
 } from "@react-three/drei";
-import { TextureLoader } from "three";
 
 import CanvasLoader from "../Loader";
 
