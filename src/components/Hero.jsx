@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { ComputersCanvas } from './canvas';
-import Typical from 'react-typical';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Hero = () => {
   return (
@@ -17,16 +17,14 @@ const Hero = () => {
           </h1>
           <p className={`${styles.heroSubText} text-white`}>
             I am a
-            <Typical
-              steps={[
-                ' student.', 2000,
-                ' programmer.', 2000,
-                'n aspiring software developer.', 2000,
-                ' tech enthusiast.', 2000, 
-                '',
-              ]}
-              loop={Infinity}
-              wrapper="span"
+            <Typewriter
+              words={[' student.', ' programmer.', ' aspiring software developer.', ' tech enthusiast.']}
+              loop={0}
+              cursor
+              cursorStyle='_'
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
             />
           </p>
         </div>
