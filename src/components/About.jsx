@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { motion } from 'framer-motion';
 import Button  from './Button';
 import Globe from 'react-globe.gl';
-import { Tilt } from 'react-tilt';
 import { fadeIn, textVariant } from "../utils/motion";
 import { styles } from "../styles";
 import { SectionWrapper } from '../hoc';
@@ -33,7 +32,7 @@ const About = () => {
       </motion.div>
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className='col-span-1 xl:row-span-3'>
-          <Tilt className='w-full'>
+          <div className='w-full'>
             <motion.div
               variants={fadeIn("right", "spring", ++index*0.5, 0.75)}
               initial="initial"
@@ -48,34 +47,34 @@ const About = () => {
                 </p>
               </div>
             </motion.div>
-          </Tilt>
+          </div>
         </div>
         <div className='col-span-1 xl:row-span-3'>
-          <Tilt className='w-full'>
-              <motion.div
-                variants={fadeIn("right", "spring", ++index, 0.75)}
-                initial="initial"
-                animate="animate"
-                className='grid-container'
-              >
-                <img src={grid2} alt='grid-2' className='w-full sm:h-[276px] h-fit object-contain' />
-                <div>
-                  <p className='grid-headtext'>Tech Stack</p>
-                  <p className='grid-subtext'>
-                    I am passionate about Machine Learning, Web Development, Data Analysis, Database Management and more. Aside from these, I'm always willing to learn new technologies. Look below to see the technologies I am proficient in.
-                  </p>                  
-                </div>
-              </motion.div>
-            </Tilt>
+          <div className='w-full'>
+            <motion.div
+              variants={fadeIn("right", "spring", ++index, 0.75)}
+              initial="initial"
+              animate="animate"
+              className='grid-container'
+            >
+              <img src={grid2} alt='grid-2' className='w-full sm:h-[276px] h-fit object-contain' />
+              <div>
+                <p className='grid-headtext'>Tech Stack</p>
+                <p className='grid-subtext'>
+                  I am passionate about Machine Learning, Web Development, Data Analysis, Database Management and more. Aside from these, I'm always willing to learn new technologies. Look below to see the technologies I am proficient in.
+                </p>                  
+              </div>
+            </motion.div>
+          </div>
         </div>
         <div className="col-span-1 xl:row-span-3">
-          <Tilt className='w-full'>
-              <motion.div
-                variants={fadeIn("right", "spring", ++index*0.5, 0.75)}
-                initial="initial"
-                animate="animate"
-                className='grid-container'
-              >
+          <div className='w-full'>
+            <motion.div
+              variants={fadeIn("right", "spring", ++index*0.5, 0.75)}
+              initial="initial"
+              animate="animate"
+              className='grid-container'
+            >
               <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
                 <Globe
                   height={326}
@@ -95,44 +94,40 @@ const About = () => {
                 <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
               </div>
             </motion.div>
-          </Tilt>
-
-
+          </div>
         </div>
         <div className="xl:col-span-2 xl:row-span-3">
-          <Tilt className='w-full'>
-              <motion.div
-                variants={fadeIn("right", "spring", ++index*0.5, 0.75)}
-                initial="initial"
-                animate="animate"
-                className='grid-container'
-              >
-            <img src={grid3} alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
-
-            <div>
-              <p className="grid-headtext">My Passion for Coding</p>
-              <p className="grid-subtext">
-                I love solving problems and building things through code. Programming isn&apos;t just my
-                profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
-              </p>
-            </div>
+          <div className='w-full'>
+            <motion.div
+              variants={fadeIn("right", "spring", ++index*0.5, 0.75)}
+              initial="initial"
+              animate="animate"
+              className='grid-container'
+            >
+              <img src={grid3} alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
+              <div>
+                <p className="grid-headtext">My Passion for Coding</p>
+                <p className="grid-subtext">
+                  I love solving problems and building things through code. Programming isn&apos;t just my
+                  profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
+                </p>
+              </div>
             </motion.div>
-          </Tilt>
+          </div>
         </div>
         <div className="xl:col-span-1 xl:row-span-2">
-          <Tilt className='w-full'>
-              <motion.div
-                variants={fadeIn("right", "spring", ++index*0.5, 0.75)}
-                initial="initial"
-                animate="animate"
-                className='grid-container'
-              >
+          <div className='w-full'>
+            <motion.div
+              variants={fadeIn("right", "spring", ++index*0.5, 0.75)}
+              initial="initial"
+              animate="animate"
+              className='grid-container'
+            >
               <img
                 src={grid4}
                 alt="grid-4"
                 className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
               />
-
               <div className="space-y-2">
                 <p className="grid-subtext text-center">Contact me</p>
                 <div className="copy-container" onClick={handleCopy}>
@@ -141,11 +136,10 @@ const About = () => {
                 </div>
               </div>
             </motion.div>
-          </Tilt>
+          </div>
         </div>
       </div>
     </section>
-    
   );
 };
 
