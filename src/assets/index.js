@@ -31,6 +31,9 @@ import rightarrow from "./right-arrow.png";
 import leftarrow from "./left-arrow.png";
 import project1 from "./project/project1.mp4";
 import project2 from "./project/project2.mp4";
+import project3 from "./project/project3.mp4";
+import arrowup from "./arrow-up.png";
+import terminal from "./terminal.png";
 
 export {
   logo,
@@ -65,5 +68,8 @@ export {
   leftarrow,
   project1,
   project2, 
-  linkedin
+  project3, 
+  linkedin,
+  arrowup,
+  terminal
 };

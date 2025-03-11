@@ -64,12 +64,60 @@ const Computers = ({ isMobile }) => {
       }
     };
 
+    const handleTouchMove = (event) => {
+      if (event.touches.length > 0) {
+        mouse.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
+
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(scene.children, true);
+
+        if (intersects.length > 0) {
+          const intersectedObject = intersects[0].object;
+          if (intersectedObject.isMesh && intersectedObject.name === "MY_SCREEN_MY_SCREEN_0") {
+            gl.domElement.style.cursor = "pointer";
+          } else {
+            gl.domElement.style.cursor = "default";
+          }
+        } else {
+          gl.domElement.style.cursor = "default";
+        }
+      }
+    };
+
+    const handleTouchEnd = (event) => {
+      if (event.changedTouches.length > 0) {
+        mouse.x = (event.changedTouches[0].clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.changedTouches[0].clientY / window.innerHeight) * 2 + 1;
+
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObjects(scene.children, true);
+
+        if (intersects.length > 0) {
+          const intersectedObject = intersects[0].object;
+          console.log("Intersected object:", intersectedObject);
+          console.log("Intersection point:", intersects[0].point);
+
+          if (intersectedObject.isMesh && intersectedObject.name === "MY_SCREEN_MY_SCREEN_0") {
+            handleButtonClick();
+            setActive(true);
+            setTimeout(() => setActive(false), 200); // Reset the animation after 200ms
+            console.log("Button clicked!");
+          }
+        }
+      }
+    };
+
     gl.domElement.addEventListener("pointermove", handlePointerMove);
     gl.domElement.addEventListener("pointerdown", handlePointerDown);
+    gl.domElement.addEventListener("touchmove", handleTouchMove);
+    gl.domElement.addEventListener("touchend", handleTouchEnd);
 
     return () => {
       gl.domElement.removeEventListener("pointermove", handlePointerMove);
       gl.domElement.removeEventListener("pointerdown", handlePointerDown);
+      gl.domElement.removeEventListener("touchmove", handleTouchMove);
+      gl.domElement.removeEventListener("touchend", handleTouchEnd);
     };
   }, [computer, gl, scene, camera]);
 

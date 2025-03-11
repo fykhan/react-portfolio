@@ -20,7 +20,8 @@ import {
   json, 
   spotlight1,
   project1,
-  project2
+  project2,
+  project3
 } from "../assets";
 
 const projects = [
@@ -63,6 +64,43 @@ const projects = [
       'It is built using PHP, MySQL, JavaScript, and AJAX technologies. • Handles User registration and login, performs both client side and server side validation• Real-time chat functionality using AJAX and JavaScript• Uses MySQL database to store user information and chat messages',
     href: 'https://github.com/fykhan/webchat',
     texture: project2,
+    logo: '/assets/project-logo1.png',
+    logoStyle: {
+      backgroundColor: '#2A1816',
+      border: '0.2px solid #36201D',
+      boxShadow: '0px 0px 60px 0px #AA3C304D',
+    },
+    spotlight: spotlight1,
+    tags: [
+      {
+        id: 1,
+        name: 'Javascript',
+        path: javascript,
+      },
+      {
+        id: 2,
+        name: 'PHP',
+        path: php,
+      },
+      {
+        id: 3,
+        name: 'JSON',
+        path: json,
+      },
+      {
+        id: 4,
+        name: 'MySQL',
+        path: sql,
+      }
+    ],
+  },
+  {
+    title: 'Angry Birds Inspired Terminal Game',
+    desc: 'PHP-based web chat platform that allows users to register, log in, and exchange real-time messages with other users. ',
+    subdesc:
+      'It is built using PHP, MySQL, JavaScript, and AJAX technologies. • Handles User registration and login, performs both client side and server side validation• Real-time chat functionality using AJAX and JavaScript• Uses MySQL database to store user information and chat messages',
+    href: 'https://github.com/fykhan/webchat',
+    texture: project3,
     logo: '/assets/project-logo1.png',
     logoStyle: {
       backgroundColor: '#2A1816',
