@@ -41,7 +41,7 @@ import flask from "./tech/flask.png";
 import grid1 from './grid1.png';
 import grid2 from './grid2.png';
 import grid3 from './grid3.png';
-import grid4 from './grid4.jpeg';
+import grid4 from './grid4.png';
 
 
 export {
