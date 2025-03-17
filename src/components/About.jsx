@@ -5,11 +5,7 @@ import Globe from 'react-globe.gl';
 import { fadeIn, textVariant } from "../utils/motion";
 import { styles } from "../styles";
 import { SectionWrapper } from '../hoc';
-
-import grid1 from '../assets/grid1.png';
-import grid2 from '../assets/grid2.png';
-import grid3 from '../assets/grid3.png';
-import grid4 from '../assets/grid4.jpeg';
+import { grid1, grid2, grid3, grid4 } from '../assets';
 import copy from '../assets/copy.svg';
 import tick from '../assets/tick.svg';
 
@@ -39,7 +35,7 @@ const About = () => {
               animate="animate"
               className='grid-container p-4 sm:p-6'
             >
-              <img src={grid1} alt='grid-1' className='w-full sm:h-[276px] h-fit object-contain' />
+              <img src={grid4} alt='grid-1' className='w-full sm:h-[276px] h-fit object-contain' />
               <div>
                 <p className='grid-headtext'>About me</p>
                 <p className='grid-subtext'>
@@ -61,7 +57,7 @@ const About = () => {
               <div>
                 <p className='grid-headtext'>Tech Stack</p>
                 <p className='grid-subtext'>
-                  I am currently working on learning and working on projects related to Machine Learning, Web Development, Data Analysis, Database Management and more. Aside from these, I'm always willing to learn new technologies. Look below to see the technologies I am proficient in.
+                  I am currently working on learning and implementing projects related to Machine Learning, Web Development, Data Analysis, Database Management and more. Aside from these, I'm always willing to learn new technologies. Look below to see the technologies I am proficient in.
                 </p>                  
               </div>
             </motion.div>
@@ -91,7 +87,7 @@ const About = () => {
               </div>
               <div>
                 <p className="grid-subtext">I was born in Bangladesh and currently based in Hong Kong </p>
-                <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+
               </div>
             </motion.div>
           </div>
@@ -108,8 +104,7 @@ const About = () => {
               <div>
                 <p className="grid-headtext">My Passion for Coding</p>
                 <p className="grid-subtext">
-                  I love solving problems and building things through code. Programming isn&apos;t just my
-                  profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
+                  My passion for coding stems from my love for anything tech. I love solving problems and building things through code. I always welcome the opportunity to explore new technologies.
                 </p>
               </div>
             </motion.div>
@@ -123,11 +118,7 @@ const About = () => {
               animate="animate"
               className='grid-container'
             >
-              <img
-                src={grid4}
-                alt="grid-4"
-                className="w-full h-fit object-cover sm:object-top"
-              />
+
               <div className="space-y-2">
                 <p className="grid-subtext text-center">Contact me</p>
                 <div className="copy-container" onClick={handleCopy}>

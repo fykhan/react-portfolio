@@ -38,6 +38,11 @@ import pytorch from "./tech/pytorch.png";
 import tensorflow from "./tech/tensorflow.png";
 import django from "./tech/django.png";
 import flask from "./tech/flask.png";
+import grid1 from './grid1.png';
+import grid2 from './grid2.png';
+import grid3 from './grid3.png';
+import grid4 from './grid4.jpeg';
+
 
 export {
   logo,
@@ -79,5 +84,9 @@ export {
   pytorch,
   tensorflow,
   django,
-  flask
+  flask, 
+  grid1, 
+  grid2,
+  grid3,
+  grid4,
 };

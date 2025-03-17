@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { styles } from '../styles';
 import { navLinks } from '../constants';
 import {logo, menu, close} from '../assets';
+import { github, linkedin } from '../assets';
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -25,6 +26,14 @@ const Navbar = () => {
             Farhan &nbsp;<span className='sm:block hidden'>Yusuf Khan</span>
           </p>
         </Link>
+        <div className="flex gap-1">
+          <a href="https://github.com/fykhan" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <img src={github} alt="github" className="w-1/2 h-1/2" />
+          </a>
+          <a href="https://linkedin.com/in/farhan-yusuf-khan" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <img src={linkedin} alt="linkedin" className="w-1/2 h-1/2" />
+          </a>
+              </div>
         <ul className='list-none hidden sm:flex flex-row gap-10'>
           {navLinks.map((link) => (
             <li 
