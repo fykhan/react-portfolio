@@ -9,7 +9,7 @@ import { SectionWrapper } from '../hoc';
 import grid1 from '../assets/grid1.png';
 import grid2 from '../assets/grid2.png';
 import grid3 from '../assets/grid3.png';
-import grid4 from '../assets/grid4.png';
+import grid4 from '../assets/grid4.jpeg';
 import copy from '../assets/copy.svg';
 import tick from '../assets/tick.svg';
 
@@ -61,7 +61,7 @@ const About = () => {
               <div>
                 <p className='grid-headtext'>Tech Stack</p>
                 <p className='grid-subtext'>
-                  I am passionate about Machine Learning, Web Development, Data Analysis, Database Management and more. Aside from these, I'm always willing to learn new technologies. Look below to see the technologies I am proficient in.
+                  I am currently working on learning and working on projects related to Machine Learning, Web Development, Data Analysis, Database Management and more. Aside from these, I'm always willing to learn new technologies. Look below to see the technologies I am proficient in.
                 </p>                  
               </div>
             </motion.div>
@@ -90,7 +90,7 @@ const About = () => {
                 />
               </div>
               <div>
-                <p className="grid-subtext">I’m born in Bangladesh and based in Hong Kong </p>
+                <p className="grid-subtext">I was born in Bangladesh and currently based in Hong Kong </p>
                 <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
               </div>
             </motion.div>
@@ -115,7 +115,7 @@ const About = () => {
             </motion.div>
           </div>
         </div>
-        <div className="xl:col-span-1 xl:row-span-2">
+        <div className="xl:col-span-1 row-span-3" >
           <div className='w-full'>
             <motion.div
               variants={fadeIn("right", "spring", ++index*0.5, 0.75)}
@@ -126,7 +126,7 @@ const About = () => {
               <img
                 src={grid4}
                 alt="grid-4"
-                className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
+                className="w-full h-fit object-cover sm:object-top"
               />
               <div className="space-y-2">
                 <p className="grid-subtext text-center">Contact me</p>

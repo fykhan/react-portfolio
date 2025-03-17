@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 
 import { MeshCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
@@ -10,6 +10,22 @@ import { styles } from "../styles";
 
 const Tech = () => {
   const [showLanguages, setShowLanguages] = useState(true);
+
+  const languageCanvases = useMemo(() => (
+    languages.map((language) => (
+      <div className='w-28 h-28' key={language.name}>
+        <MeshCanvas icon={language.icon} />
+      </div>
+    ))
+  ), []);
+
+  const technologyCanvases = useMemo(() => (
+    technologies.map((technology) => (
+      <div className='w-20 h-20' key={technology.name}>
+        <MeshCanvas icon={technology.icon} />
+      </div>
+    ))
+  ), []);
 
   return (
     <div>
@@ -40,11 +56,7 @@ const Tech = () => {
             </h2>
           </motion.div>
           <div className='mt-20 flex flex-row flex-wrap justify-center gap-10'>
-            {languages.map((language) => (
-              <div className='w-28 h-28' key={language.name}>
-                <MeshCanvas icon={language.icon} />
-              </div>
-            ))}
+            {languageCanvases}
           </div>
         </>
       ) : (
@@ -55,11 +67,7 @@ const Tech = () => {
             </h2>
           </motion.div>
           <div className='mt-20 flex flex-row flex-wrap justify-center gap-10'>
-            {technologies.map((technology) => (
-              <div className='w-20 h-20' key={technology.name}>
-                <MeshCanvas icon={technology.icon} />
-              </div>
-            ))}
+            {technologyCanvases}
           </div>
         </>
       )}
