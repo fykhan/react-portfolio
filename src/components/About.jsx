@@ -63,7 +63,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">About Me</p>
               <p className="grid-subtext">
-                As a Computer Science Student at the University of Hong Kong with 5+ years of coding experience.
+                I am a Computer Science Student at the University of Hong Kong with 5+ years of coding experience.
                 Passionate about anything tech, always exploring new ideas.
               </p>
             </div>
