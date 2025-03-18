@@ -13,10 +13,9 @@ const App = () => {
         </div>
       <div className="max-w-7xl mx-auto relative">
           <About /> 
+          <Projects />
           <Tech />
           {/* <Experience /> */}
-          <Projects />
-          {/* <Feedbacks /> */}
           <div className="relative z-0">
             <Contact />
           </div>

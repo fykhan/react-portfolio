@@ -161,19 +161,90 @@ body {
 }
 
 .grid-container {
-  @apply w-full h-full border border-black-300 bg-black-200 rounded-lg sm:p-7 p-4 flex flex-col gap-5;
+  @apply w-full h-full border border-black-300 bg-black-200 rounded-lg sm:p-7 p-4 flex flex-col gap-5 transition-all duration-300 ease-in-out;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  min-height: 100%; /* Ensures all grid items take up the full available space */
 }
 
+.grid-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Ensure grid fills available space */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible columns */
+  grid-template-rows: auto;
+  gap: 16px; /* Reduce gap size */
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-container {
+    padding: 15px;
+  }
+}
+
+
 .grid-headtext {
-  @apply text-xl font-semibold mb-2 text-white font-generalsans;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff; /* Bright white */
+  text-transform: uppercase;
 }
 
 .grid-subtext {
-  @apply text-[#afb0b6] text-base font-generalsans;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .copy-container {
-  @apply cursor-pointer flex justify-center items-center gap-2;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.copy-container:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+img {
+  border-radius: 10px; /* Rounded image corners */
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-container {
+    padding: 15px;
+  }
+  .grid-headtext {
+    font-size: 1.5rem;
+  }
+
+  .grid-subtext {
+    font-size: 1rem;
+  }
 }
 
 @layer utilities {
